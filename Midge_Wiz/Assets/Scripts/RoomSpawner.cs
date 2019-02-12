@@ -19,8 +19,16 @@ public class RoomSpawner : MonoBehaviour {
         Destroy(gameObject, waitTime);
         templates = GameObject.FindGameObjectWithTag("Rooms").GetComponent<RoomTemplates>();
         Debug.Log("set templates");
-        Invoke("Spawn", 0.1f);
+        Invoke("Spawn", 1f);
         Debug.Log("invoked Spawn");
+    }
+
+    private void Update()
+    {
+        if (spawned == false)
+        {
+            Invoke("Respawn", 1.0f);
+        }
     }
 
     public void Spawn()
@@ -53,7 +61,17 @@ public class RoomSpawner : MonoBehaviour {
                 Instantiate(templates.rightRooms[rand], transform.position, templates.rightRooms[rand].transform.rotation);
             }
             spawned = true;
-            //Debug.Log("set spawned to true");
+            Debug.Log("set spawned to true");
+        }
+    }
+    public void Respawn()
+    {
+        if(spawned == false)
+        {
+            rand = Random.Range(0, templates.respawnRooms.Length);
+            Instantiate(templates.respawnRooms[rand], transform.position, templates.respawnRooms[rand].transform.rotation);
+            spawned = true;
+            Debug.Log("respawning...");
         }
     }
 
@@ -61,11 +79,16 @@ public class RoomSpawner : MonoBehaviour {
     {
         if (other.CompareTag("UnSpawnable"))
         {
-            spawned = true;
+            //spawned = true;
+            Destroy(gameObject);
         }
-        /*else
+    }
+
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.CompareTag("UnSpawnable"))
         {
-            Invoke("Spawn", 0.4f);
-        }*/
+            spawned = false;
+        }
     }
 }

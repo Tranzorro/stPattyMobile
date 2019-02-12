@@ -160,8 +160,19 @@ MonoBehaviour:
   - {fileID: 1151330445354836, guid: f80c648345c23d047829802fe76f7aa0, type: 2}
   - {fileID: 1272512276540590, guid: bc636f0235dc37f498e9c46f80e54160, type: 2}
   - {fileID: 1380630479038638, guid: 47b4bc1d1782b2646843bf724dda9d41, type: 2}
+  respawnRooms:
+  - {fileID: 1375913442064692, guid: 47c7f37d3ce9af5458d7f3c9647b2034, type: 2}
+  - {fileID: 1704873109348260, guid: ad07fa55a100f4447ab590fcbfeee58b, type: 2}
+  - {fileID: 1380630479038638, guid: 47b4bc1d1782b2646843bf724dda9d41, type: 2}
+  - {fileID: 1545739116836878, guid: f2acc662c58ee194a95c165352facdb5, type: 2}
+  - {fileID: 1272512276540590, guid: bc636f0235dc37f498e9c46f80e54160, type: 2}
+  - {fileID: 1151330445354836, guid: f80c648345c23d047829802fe76f7aa0, type: 2}
+  - {fileID: 1380254620778376, guid: 89943e1431bc0c441a89812e3e7f0c72, type: 2}
+  - {fileID: 1814849874385410, guid: 84f65a1bfb9cf0b43a49194f99d585c5, type: 2}
+  - {fileID: 1126905407184024, guid: 977bc8ed82f885349b98f54366af965f, type: 2}
+  - {fileID: 1039337338957600, guid: 33cd768184b81754a9c39ff750e06b5e, type: 2}
   rooms: []
-  waitTime: 5
+  waitTime: 20
   boss: {fileID: 1008412363052012, guid: 131c79c8c0f4fe34c9801094f078c38f, type: 2}
 --- !u!4 &171919548
 Transform:
